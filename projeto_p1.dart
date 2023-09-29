@@ -5,8 +5,7 @@ void main() {
   int vitoriasUsuario = 0;
   int vitoriasComputador = 0;
   int empates = 0;
-  bool usarDadoMagico =
-      false; // Flag para controlar se o "dado mágico" foi usado.
+  bool usarDadoMagico = false;
 
   print("Quantas rodadas você deseja jogar?");
   int totalRodadas = int.parse(stdin.readLineSync()!);
@@ -30,18 +29,18 @@ void main() {
 
     // Aplica o "dado mágico" somente para o total do usuário, na rodada em que foi usado.
     if (usarDadoMagico) {
-      int sorteio = Random().nextInt(2); // Sorteia 0 ou 1.
+      int sorteio = Random().nextInt(2);
       if (sorteio == 0) {
         print(
             "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
         print(
             "Você usou o 'dado mágico' e sua soma total foi reduzida pela metade!");
-        somaUsuario = (somaUsuario ~/ 2); // Reduz a soma pela metade.
+        somaUsuario = (somaUsuario ~/ 2);
       } else {
         print(
             "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
         print("Você usou o 'dado mágico' e sua soma total foi dobrada!");
-        somaUsuario *= 2; // Dobra a soma.
+        somaUsuario *= 2;
       }
     }
 
@@ -90,13 +89,11 @@ void main() {
   }
 }
 
-// Função para simular a rolagem de um dado de seis faces 'n' vezes.
 List<int> rolarDados(int n) {
   Random random = Random();
   List<int> resultados = [];
   for (int i = 0; i < n; i++) {
-    resultados
-        .add(random.nextInt(6) + 1); // Gera um número aleatório entre 1 e 6.
+    resultados.add(random.nextInt(6) + 1);
   }
   return resultados;
 }
